@@ -85,20 +85,9 @@ const generateToken = (id) =>{
     });
 }
 
-
-
 const getMe = async (req, res) => {
   // We have access to req.user because the middleware put it there!
   res.status(200).json(req.user);
 }
-
-// Don't forget to export it!
-module.exports = {
-  registerUser,
-  loginUser,
-  getMe, // <--- Added this
-};
-
-
 
 module.exports = {registerUser, loginUser, getMe};

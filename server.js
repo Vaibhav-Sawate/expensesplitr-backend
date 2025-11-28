@@ -19,8 +19,7 @@ app.use(express.json());
 //ROUTES
 //we just point route files here
 app.use('/api/users', require('./routes/userRoutes'));
-
-
+app.use('/api/expenses', require('./routes/expenseRoutes'));
 
 const PORT = process.env.PORT || 5000;
 

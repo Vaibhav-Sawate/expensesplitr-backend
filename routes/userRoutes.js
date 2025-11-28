@@ -16,4 +16,5 @@ router.post('/login', loginUser);
 //test the route
 router.get('/me', protect, getMe);
 
+
 module.exports = router;
