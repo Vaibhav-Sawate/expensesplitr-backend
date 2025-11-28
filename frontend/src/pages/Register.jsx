@@ -24,8 +24,11 @@ function Register() {
 
         try{
             //WE are trying to hit backend runninf on port 5000
-            const response = await axios.post('https://localhost:500/api/users', formData)
-            
+
+            //const response = await axios.post('https://localhost:5000/api/users', formData)
+            //in mu case it is  https://expert-palm-tree-pxrj77pr4x367xx-5000.app.github.dev/
+            // as this is https i need to configure a proxuy 
+            const response = await axios.post('/api/users', formData)
             console.log(response.data)
             alert("Success! Check console")
         } catch (error) {
