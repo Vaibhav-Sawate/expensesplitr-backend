@@ -1,5 +1,5 @@
 const express = require('express');
-const {createExpense, getExpenses} = require('../controllers/expenseController');
+const {createExpense, getExpenses, deleteExpense} = require('../controllers/expenseController');
 const router = express.Router();
 const {protect} = require('../middleware/authMiddleware');
 
@@ -8,5 +8,7 @@ const {protect} = require('../middleware/authMiddleware');
 
 router.post('/', protect, createExpense);
 router.get('/', protect, getExpenses);
+router.delete('/:id', protect, deleteExpense);
+
 
 module.exports= router;

@@ -37,5 +37,26 @@ const createExpense = async(req, res) =>{
     }
 }
 
+const deleteExpense= async(req, res)=>{
+    try{
+        const expense = await Expense.findById(req.params.id);
 
-module.exports = {getExpenses, createExpense};
+        if(!expense){
+            return res.status(404).json({message: 'Expense not found'});
+        }
+
+        //makinf sure if user owns sit
+        if(expense.user.toString() !==req.user.id){
+            return res.status(401).json({message: 'User not authorized'});
+        }
+
+        //delete
+        await expense.deleteOne();
+        res.status(200).json({id: req.params.id});
+    } catch(error){
+        res.status(500).json({message: error.message});
+    }
+};
+
+
+module.exports = {getExpenses, createExpense, deleteExpense};
