@@ -6,7 +6,7 @@ A modern, full-stack personal finance application designed to help users track t
 
 Frontend (Vercel): https://smart-expense-tracker.vercel.app (Replace with your actual Vercel link)
 
-Backend (Render): https://smart-expense-api.onrender.com (Replace with your actual Render link)
+Backend (Render)
 
 ✨ Features
 
